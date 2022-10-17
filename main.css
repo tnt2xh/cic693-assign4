@@ -1,6 +1,5 @@
 table{
     padding: 20px;
-    min-height: 50%;
 }
 
 footer{
@@ -28,13 +27,6 @@ footer{
     width: 150px;
 }
 
-.image1 div{
-    border: solid;
-    border-width: 10px;
-    border-color: green;
-    
-}
-
 .image2{
     width: 200px;
     height: 200px;
@@ -50,11 +42,11 @@ footer{
     margin-right: auto;
     margin-left: auto;
     max-width: 1000px;
+    min-height: 50%;
 }
 .column-right{
     background-color: orange;
     color: white;
-    width: 150px;
     vertical-align: top;
     
 }
@@ -62,7 +54,8 @@ footer{
     border: solid;
     border-color: black;
     border-width: 3px;
-    
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .column-left{
     background-color: green;
@@ -81,6 +74,7 @@ footer{
     border: solid;
     border-color: black;
     border-width: 3px;
+    min-height: 50%;
 }
 .pad{
     padding: 10px;
