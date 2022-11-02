@@ -1,16 +1,69 @@
 <html lang="en-US">
     <head>
+    <?php
+                if(!isset($_COOKIE['colorCookie'])){
+                    $colors = 1;
+                    setcookie("colorCookie", $colors);
+                }
+                else{
+                    $colors = $_COOKIE['colorCookie'];
+                }
+                if(!isset($_COOKIE['darkCookie'])){
+                    $dark = 1;
+                    setcookie("darkCookie", $dark);
+                }
+                else{
+                    $dark = $_COOKIE['darkCookie'];
+                }
+
+                if(isset($_POST['colorButton'])){
+                    if($colors == 1){
+                        $colors = 0;
+                        setcookie("colorCookie", $colors);
+                    }
+                    else{
+                        $colors = 1;
+                        setcookie('colorCookie', $colors);
+                    }
+                    unset($_POST['colorButton']);
+                }
+
+                
+
+                if(isset($_POST['darkModeButton'])){
+                    if($dark == 1){
+                        $dark = 0;
+                        setcookie('darkCookie', $dark);
+
+                    }
+                    else{
+                        $dark = 1;
+                        setcookie('darkCookie', $dark);
+                    }
+                    unset($_POST['darkModeButton']);
+                }
+
+                
+            ?>
         <title>
-            Assignment 3 
+            Assignment 4 
         </title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     
-    <div class="tableDiv">
-        <body>
+    <div >
+        <body class =<?php 
+        if($dark == 1){
+            echo "tableDiv";
+        }
+        else{
+            echo "dark";
+        }
+        
+        ?>> 
+        <!-- class="tableDiv -->
             <h1>
                 Hayden Hughes
-                
                 <div class="image1board">
                     <img class="image1" src="UTSAIMage.png" alt="UTSA">
                 </div>
@@ -22,10 +75,23 @@
             </u>
             </h3>
             <hr>
+
+            
+
         <table>
             <tr>
-                <div>
-                    <td class="column-left">
+                <div >
+                    <!-- <td class=column-left> -->
+                    <td class= <?php
+                    if($colors == 1){
+                        
+                        echo "column-left";
+                    }
+                    else
+                    {
+                        echo "random-color";
+                    }
+                    ?>>
                         <div class="pad">
                             <h3 class="title-left" id="Menu">
                                  Menu
@@ -61,7 +127,18 @@
                 </td>
             
             <div>
-                <td class="column-right">
+                <!-- <td class=column-right> -->
+                <td class= <?php
+                    if($colors == 1){
+                        
+                        echo "column-right";
+                    }
+                    else
+                    {
+                        echo "random-color";
+                    }
+                        
+                    ?>>
                     <div class="pad">
                         <h3 class="title-left" id="Menu">
                             Courses
@@ -73,6 +150,30 @@
                             <li>CS4723</li>                   
                         </ol>
                     </div>
+                    <div class="pad">
+                        <h3 class="title-left" id="Menu">
+                            Theme Toggles
+                        </h3>
+                        <hr>
+
+                        
+                        <form action = "" method="post">
+                            <input type="submit" name="colorButton" 
+                                        value="color" class="toggleButton"/>
+                              
+                            
+                        </form>
+
+                        <form action = "" method="post">
+                        <input type="submit" name="darkModeButton"
+                                     value="dark" class="toggleButton"/>
+                        </form>
+
+                        
+
+                        
+                    
+                    </div>
                 </td>
             </div>
             </tr>
@@ -80,7 +181,7 @@
 
         </body>
         <footer  class="pfooter">
-            Copyright 2022 Hayden Hughes
+            Copyright 2022 Hayden Hughes <br>
         </footer>
 </div>
     </html>

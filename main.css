@@ -3,7 +3,6 @@ table{
 }
 
 footer{
-    /* width: 5px; */
     border: dashed;
     border-color: green;
     border-width: 5px;
@@ -47,6 +46,7 @@ footer{
 .column-right{
     background-color: orange;
     color: white;
+    width: 150px;
     vertical-align: top;
     
 }
@@ -78,4 +78,22 @@ footer{
 }
 .pad{
     padding: 10px;
+}
+
+.random-color{
+    background-color: transparent;
+    vertical-align: top;
+    width: 150px;
+}
+
+.toggleButton{
+    width: 100%;
+}
+
+.dark{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+    min-height: 50%;
+    background-color: grey;
 }
